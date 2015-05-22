@@ -1,6 +1,10 @@
 package org.spideruci.hamcrest.primitive;
 
+import static org.spideruci.hamcrest.primitive.AllIntsOf.allIntsOf;
 import static org.hamcrest.core.IsEqual.equalTo;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -80,4 +84,38 @@ public class IsIntArrayContaining extends TypeSafeDiagnosingMatcher<int[]> {
     return IsIntArrayContaining.hasInt(matcher);
   }
 
+
+  /**
+   * Creates a matcher for the vararg intMatchers that matches when consecutive 
+   * passes over the examined int array yield at least one item that is matched 
+   * by the corresponding matcher from the specified <code>intMatchers</code>. 
+   * While matching, each traversal of the examined int array will stop as soon 
+   * as a matching item is found.
+   * For example:
+   * <pre>assertThat(new int[] { 1, 2, 3 }, hasItems(3, 2))</pre>
+   * 
+   * @param intMatchers
+   *     the matchers to apply to ints provided by the examined int array
+   */
+  @SafeVarargs
+  public static Matcher<int[]> hasInts(Matcher<Integer> ... intMatchers) {
+      List<Matcher<int[]>> all = new ArrayList<>(intMatchers.length);
+      
+      for (Matcher<Integer> elementMatcher : intMatchers) {
+        all.add(new IsIntArrayContaining(elementMatcher));
+      }
+      
+      return allIntsOf(all);
+  }
+  
+  public static Matcher<int[]> hasInts(int ... integers) {
+    List<Matcher<int[]>> all = new ArrayList<>(integers.length);
+    
+    for (int element : integers) {
+      all.add(hasInt(element));
+    }
+    
+    return allIntsOf(all);
+}
+  
 }
