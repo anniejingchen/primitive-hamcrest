@@ -22,6 +22,7 @@ Basic hamcrest matchers with Java Primitives in mind.
 ## Features
 
 Currently the library supports veryifying if a primitive array contains all of the given primitive elements for the following primitive types:
+
     - [x] int array
     - [x] float array
     - [ ] byte array
