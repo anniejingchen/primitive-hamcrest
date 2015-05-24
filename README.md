@@ -1,7 +1,7 @@
 # primitive-hamcrest
 Basic hamcrest matchers with Java Primitives in mind.
 
-## Usage Instructions
+## Installation Instructions
 
 * Install the mvn package to your local repository.  
 ```
@@ -18,3 +18,14 @@ Basic hamcrest matchers with Java Primitives in mind.
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
 ```
+
+## Features
+
+Currently the library supports veryifying if a primitive array contains all of the given primitive elements for the following primitive types:
+    - [x] int array
+    - [x] float array
+    - [ ] byte array
+    - [ ] boolean array
+    - [ ] short array
+    - [ ] double array
+    - [ ] long array

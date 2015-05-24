@@ -1,6 +1,5 @@
 package org.spideruci.hamcrest.primitive;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.hamcrest.Description;

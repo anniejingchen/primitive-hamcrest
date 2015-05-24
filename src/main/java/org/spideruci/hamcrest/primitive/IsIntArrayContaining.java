@@ -23,14 +23,14 @@ public class IsIntArrayContaining extends TypeSafeDiagnosingMatcher<int[]> {
       mismatchDescription.appendText("was empty");
       return false;
     }
-    
+
     for (int item : items) {
       if (elementMatcher.matches(item)) {
         return true;
       }
     }
-    
-    
+
+
     mismatchDescription.appendText("mismatches were: [");
     int lastIndex = items.length - 1;
     for (int i = 0; i <= lastIndex - 1; i += 1) {
@@ -42,7 +42,7 @@ public class IsIntArrayContaining extends TypeSafeDiagnosingMatcher<int[]> {
     mismatchDescription.appendText("]");
     return false;
   }
-  
+
   private boolean isEmpty(int[] items) {
     return items.length == 0;
   }
@@ -99,23 +99,23 @@ public class IsIntArrayContaining extends TypeSafeDiagnosingMatcher<int[]> {
    */
   @SafeVarargs
   public static Matcher<int[]> hasInts(Matcher<Integer> ... intMatchers) {
-      List<Matcher<int[]>> all = new ArrayList<>(intMatchers.length);
-      
-      for (Matcher<Integer> elementMatcher : intMatchers) {
-        all.add(new IsIntArrayContaining(elementMatcher));
-      }
-      
-      return allIntsOf(all);
+    List<Matcher<int[]>> all = new ArrayList<>(intMatchers.length);
+
+    for (Matcher<Integer> elementMatcher : intMatchers) {
+      all.add(new IsIntArrayContaining(elementMatcher));
+    }
+
+    return allIntsOf(all);
   }
-  
+
   public static Matcher<int[]> hasInts(int ... integers) {
     List<Matcher<int[]>> all = new ArrayList<>(integers.length);
-    
+
     for (int element : integers) {
       all.add(hasInt(element));
     }
-    
+
     return allIntsOf(all);
-}
-  
+  }
+
 }
