@@ -30,11 +30,10 @@ public class IsByteArrayContaining extends TypeSafeDiagnosingMatcher<byte[]> {
       }
     }
 
-
     mismatchDescription.appendText("mismatches were: [");
     int lastIndex = items.length - 1;
     for (int i = 0; i <= lastIndex - 1; i += 1) {
-      int item = items[i];
+      byte item = items[i];
       elementMatcher.describeMismatch(item, mismatchDescription);
       mismatchDescription.appendText(", ");
     }
@@ -49,7 +48,7 @@ public class IsByteArrayContaining extends TypeSafeDiagnosingMatcher<byte[]> {
 
   @Override
   public void describeTo(Description description) {
-    description.appendText("a primitive integer array (int[]) containing ")
+    description.appendText("a primitive byte array (byte[]) containing ")
     .appendDescriptionOf(elementMatcher);
   }
 
@@ -57,7 +56,7 @@ public class IsByteArrayContaining extends TypeSafeDiagnosingMatcher<byte[]> {
     return new IsByteArrayContaining(elementMatcher);
   }
 
-  public static Matcher<byte[]> hasInt(byte item) {
+  public static Matcher<byte[]> hasByte(byte item) {
     Matcher<Byte> matcher = equalTo(Byte.valueOf(item));
     return IsByteArrayContaining.hasByte(matcher);
   }
@@ -77,7 +76,7 @@ public class IsByteArrayContaining extends TypeSafeDiagnosingMatcher<byte[]> {
     List<Matcher<byte[]>> all = new ArrayList<>(bytes.length);
 
     for (byte element : bytes) {
-      all.add(hasBytes(element));
+      all.add(hasByte(element));
     }
 
     return allBytesOf(all);

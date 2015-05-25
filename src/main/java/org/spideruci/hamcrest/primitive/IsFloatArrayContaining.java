@@ -49,7 +49,7 @@ public class IsFloatArrayContaining extends TypeSafeDiagnosingMatcher<float[]> {
 
   @Override
   public void describeTo(Description description) {
-    description.appendText("a primitive integer array (int[]) containing ")
+    description.appendText("a primitive float array (float[]) containing ")
     .appendDescriptionOf(elementMatcher);
   }
 
