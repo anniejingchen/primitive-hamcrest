@@ -1,7 +1,5 @@
 package org.spideruci.hamcrest.primitive;
 
-import static org.hamcrest.core.IsEqual.equalTo;
-
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeDiagnosingMatcher;
@@ -34,9 +32,4 @@ public class EveryInt extends TypeSafeDiagnosingMatcher<int[]> {
   public static Matcher<int[]> everyInt(final Matcher<Integer> itemMatcher) {
     return new EveryInt(itemMatcher);
   }
-  
-  public static Matcher<int[]> everyInt(final int item) {
-    return new EveryInt(equalTo(item));
-  }
-
 }
