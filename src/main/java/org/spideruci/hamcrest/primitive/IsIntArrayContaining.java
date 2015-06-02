@@ -30,7 +30,6 @@ public class IsIntArrayContaining extends TypeSafeDiagnosingMatcher<int[]> {
       }
     }
 
-
     mismatchDescription.appendText("mismatches were: [");
     int lastIndex = items.length - 1;
     for (int i = 0; i <= lastIndex - 1; i += 1) {
