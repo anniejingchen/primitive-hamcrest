@@ -1,4 +1,5 @@
 # primitive-hamcrest
+
 [![Build Status](https://travis-ci.org/inf295uci-2015/primitive-hamcrest.svg?branch=master)](https://travis-ci.org/inf295uci-2015/primitive-hamcrest)
 [![Coverage Status](https://coveralls.io/repos/inf295uci-2015/primitive-hamcrest/badge.svg?branch=master)](https://coveralls.io/r/inf295uci-2015/primitive-hamcrest?branch=master)
 Basic hamcrest matchers with Java Primitives in mind.
@@ -29,6 +30,6 @@ Currently the library supports veryifying if a primitive array contains all of t
 - [x] byte array
 - [ ] short array
 - [ ] char array
-- [ ] boolean array
+- [x] boolean array
 - [ ] double array
 - [ ] long array
