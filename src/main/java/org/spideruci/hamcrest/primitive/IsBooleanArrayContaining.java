@@ -70,7 +70,7 @@ public class IsBooleanArrayContaining extends TypeSafeDiagnosingMatcher<boolean[
   }
 
   @SafeVarargs
-  public static Matcher<boolean[]> hasBoolean(Matcher<Boolean> ... booleanMatchers) {
+  public static Matcher<boolean[]> hasBooleans(Matcher<Boolean> ... booleanMatchers) {
     List<Matcher<boolean[]>> all = new ArrayList<>(booleanMatchers.length);
 
     for (Matcher<Boolean> elementMatcher : booleanMatchers) {
@@ -80,7 +80,7 @@ public class IsBooleanArrayContaining extends TypeSafeDiagnosingMatcher<boolean[
     return allBooleanOf(all);
   }
 
-  public static Matcher<boolean[]> hasBoolean(boolean ... booleans) {
+  public static Matcher<boolean[]> hasBooleans(boolean ... booleans) {
     List<Matcher<boolean[]>> all = new ArrayList<>(booleans.length);
 
     for (boolean element : booleans) {
