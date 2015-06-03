@@ -1,6 +1,5 @@
 package org.spideruci.hamcrest.primitive;
 
-import static org.junit.Assert.*;
 import static org.spideruci.hamcrest.AbstractMatcherTest.*;
 import static org.hamcrest.core.IsEqual.equalTo;
 
